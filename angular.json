@@ -1,7 +1,42 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": false
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "ngx-bar-chart-ahaf": {
+      "projectType": "library",
+      "root": "projects/ngx-bar-chart-ahaf",
+      "sourceRoot": "projects/ngx-bar-chart-ahaf/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-bar-chart-ahaf/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-bar-chart-ahaf/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-bar-chart-ahaf/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-bar-chart-ahaf/src/test.ts",
+            "tsConfig": "projects/ngx-bar-chart-ahaf/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-bar-chart-ahaf/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ngx-bar-chart-ahaf"
 }

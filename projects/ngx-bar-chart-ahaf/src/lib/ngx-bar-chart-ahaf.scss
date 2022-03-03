@@ -1,0 +1,142 @@
+$grid-color:#aaa;
+$bar-color:#F16335;
+$bar-thickness:50px;
+$bar-rounded: 3px;
+$bar-spacing:30px;
+
+.center-h {
+	display: flex;
+	justify-content: center;
+}
+
+.box>.full-bg-container {
+	padding: 10px 0;
+	margin-left: -50px;
+	margin-right: -50px;
+	width: calc(100% + 100px);
+	background-color: var(--main);
+	color: white;
+	/* width: 100%; */
+}
+
+.box>.full-bg-container>.container-fluid>.row>[class^="col"] {
+	padding-left: 0;
+}
+
+
+.box {
+	margin: 10px 0;
+}
+
+.box {
+	-webkit-box-shadow: 0px 3px 25px 0px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0px 3px 25px 0px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 3px 25px 0px rgba(0, 0, 0, 0.1);
+}
+
+
+
+@media (max-width: 600px) {
+	.box {
+		padding: 15px;
+	}
+
+	.shadow-box, .box, .box-15 {
+		-webkit-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.1);
+		-moz-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.1);
+		box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.1);
+	}
+}
+
+.box {
+	background-color: var(--boxcolor);
+	color: var(--normalcolor);
+	border-radius: 0px;
+}
+
+.box>ion-icon {
+	font-size: 30px;
+	margin-top: 20px;
+}
+
+.box>.title {
+	font-size: 30px;
+	color: var(--main);
+	font-weight: 300;
+}
+
+.box>.title>span {
+	font-size: 15px;
+	font-weight: 300;
+}
+
+.box>.subtitle {
+	font-size: 14px;
+	color: #afb0b3;
+	font-weight: 500;
+}
+
+.box.badges>*>*>*>.col-12 {
+	margin-top: 10px;
+}
+
+.box.badges>*>*>*>.col-12.teacher {
+	margin-top: 30px;
+}
+
+.box::after {
+	content: " ";
+	display: block;
+	position: absolute;
+	background-color: var(--main);
+}
+
+.relative {
+	position: relative;
+}
+
+.relative>i {
+	position: relative;
+	z-index: 9999;
+}
+
+.center-h {
+	display: flex;
+	justify-content: center;
+}
+
+.hover-show {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+}
+
+.tiny {
+	font-size: 11px !important;
+}
+
+.x-box{
+	float: left;
+}
+
+.left-box{
+	display: flex;
+	justify-content: space-between;
+	float: left;
+	flex-direction: column;
+	width: 3%;	
+}
+
+.stroke{
+	border-radius: 9px;
+	background-color: #38D430;
+	width: 18px;
+	position: absolute;
+	bottom: 0;
+}
+.stroke-back{
+	width: 18px;
+	background-color: #ececec;
+	height: 100%;
+	border-radius: 9px;
+}

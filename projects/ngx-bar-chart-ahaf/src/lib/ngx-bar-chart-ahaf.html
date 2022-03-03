@@ -1,0 +1,64 @@
+<div class="box" style="padding-bottom:70px">
+	<div class="row">
+		<div class="col-12">
+			<span class="span normal-big">
+				{{options.chartTitle}}
+			</span>
+		</div>
+
+		<div class="col-12" *ngIf="showFeedback==false">
+			<div [ngStyle]="{'height': height+ 'px'}">
+				<span class="normal">
+					nicht genügend Daten vorhanden
+				</span>
+			</div>
+		</div>
+
+		<div class="col-12" *ngIf="showFeedback==true">
+			<div class="left-box" [ngStyle]="{'height': height+ 'px'}">
+				<div>
+					<p class="tiny-small">100</p>
+				</div>
+				<div>
+					<p class="tiny-small">75</p>
+				</div>
+				<div>
+					<p class="tiny-small">50</p>
+				</div>
+				<div>
+					<p class="tiny-small">25</p>
+				</div>
+				<div>
+					<p class="tiny-small">0</p>
+				</div>
+			</div>
+
+			<div class="right-box relative center-h" [ngStyle]="{'height': height + 'px'}">
+
+				<div class="x-box center-h" *ngFor="let item of data" [ngStyle]="{'width': widthAxisPartition+'%'}">
+					<div class="relative" style="height: 300px">
+						<div class="stroke-back"></div>
+					</div>
+					<div class="stroke" [ngStyle]="{'height': item.y + '%'}"></div>
+				</div>
+
+
+				<div class="text-center" style="position:absolute;bottom:-50px;width:100%">
+					<div class="x-box center-h" *ngFor="let item of data; let index = index"
+						[ngStyle]="{'width': widthAxisPartition+'%'}">
+						<span class="tiny">
+							{{item.x}}
+						</span>
+						<br>
+						<div class="hover-show" *ngIf="hover[item.y]==true" style="margin-top:30px;z-index:9999">
+							<div class="box">
+								<div [innerHTML]="item.y"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

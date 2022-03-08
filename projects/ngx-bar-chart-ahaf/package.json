@@ -1,11 +1,14 @@
 {
   "name": "ngx-bar-chart-ahaf",
-  "version": "0.0.13",
+  "version": "0.0.18",
   "peerDependencies": {
     "@angular/common": "^13.2.5",
     "@angular/core": "^13.2.5",
-    "bootstrap": "^5.1.3",
-    "repository": "git@github.com:ahaf82/ngx-bar-chart-ahaf.git"
+    "bootstrap": "^5.1.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ahaf82/ngx-bar-chart-ahaf.git"
   },
   "dependencies": {
     "tslib": "^2.3.1"

@@ -3,8 +3,8 @@
 A simple Bar-Chart Module for your angular project
 
 <br/>
-<kbd><img src="src/pics/hours.png"></kbd>
-<kbd><img src="src/pics/hours.png"></kbd>
+<kbd><img src="https://github.com/ahaf82/ngx-bar-chart-ahaf/raw/main/projects/ngx-bar-chart-ahaf/src/pics/hours.png"></kbd>
+<kbd><img src="https://github.com/ahaf82/ngx-bar-chart-ahaf/raw/main/projects/ngx-bar-chart-ahaf/src/pics/percent.png"></kbd>
 <br/><br/>
 
 ## Getting Started

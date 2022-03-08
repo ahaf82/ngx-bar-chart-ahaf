@@ -65,8 +65,8 @@ export class NgxBarChartAhafComponent implements OnInit {
 
 	ngOnChanges() {
 		this.widthAxisPartition = 100 / this.data.length;
-		if (!!this.options.barColor) this.barColor = this.options.barColor;
-		if (!!this.options.barBackgroundColor) this.barBackgroundColor = this.options.barBackgroundColor;
+		if (!!this.options?.barColor) this.barColor = this.options.barColor;
+		if (!!this.options?.barBackgroundColor) this.barBackgroundColor = this.options.barBackgroundColor;
 		this.setYAxisValues();
 	}
 
@@ -74,7 +74,6 @@ export class NgxBarChartAhafComponent implements OnInit {
 		this.showInPercent = false;
 		!!this.options.yAxisUnit ? this.yUnit = this.options.yAxisUnit : "%";
 		this.yAxisMaxValue = !!this.options.yAxisMaxValue ? this.options.yAxisMaxValue : 100;
-		// this.yAxisValues = [`${this.yAxisMaxValue * 1} ${this.yUnit}`, `${this.yAxisMaxValue * 0.75} ${this.yUnit}`, `${this.yAxisMaxValue * 0.5} ${this.yUnit}`, `${this.yAxisMaxValue * 0.25} ${this.yUnit}`, `${this.yAxisMaxValue * 0} ${this.yUnit}`];
 		this.yAxisValues = [`${this.yAxisMaxValue * 1}`, `${this.yAxisMaxValue * 0.75}`, `${this.yAxisMaxValue * 0.5}`, `${this.yAxisMaxValue * 0.25}`, `${this.yAxisMaxValue * 0}`];
 	}
 

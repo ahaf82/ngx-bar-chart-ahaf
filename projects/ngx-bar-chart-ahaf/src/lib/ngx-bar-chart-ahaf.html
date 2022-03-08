@@ -1,12 +1,12 @@
-<div class="box" [ngStyle]="{'padding-bottom':'5vw', 'max-height': '456px', 'min-height': '286px'}">
+<div class="box">
 	<div class="row">
 		<div class="col-9" style="margin-bottom:1em">
 			<span class="span normal-big">
-				{{options.chartTitle}}
+				{{options?.chartTitle}}
 			</span>
 		</div>
 
-		<div class="col-3 span normal right center-v" style="margin-bottom:1em">
+		<div class="col-3 normal right center-v" style="margin-bottom:1em">
 			<span [ngClass]="{'bold': showInPercent != true, 'hand': showInPercent == true}" (click)="setYAxisValues()">
 				{{yUnit}}
 			</span>

@@ -2,6 +2,11 @@
 
 A simple Bar-Chart Module for your angular project
 
+<br/>
+<kbd><img src="projects/ngx-bar-chart-ahaf/src/pics/hours.png"></kbd>
+<kbd><img src="projects/ngx-bar-chart-ahaf/src/pics/percent.png"></kbd>
+<br/><br/>
+
 ## Getting Started
 
 ### Installation
@@ -32,36 +37,36 @@ Then in HTML
 ### Configuration
 
 ```
-	options = {
-		chartTitle: "chart title",
-		yAxisMaxValue: 100,
-		yAxisUnit: "hours",
-		barColor: "#38D430",
-		barBackgroundColor: "#ececec"
-	}
+barChartOptions = {
+	chartTitle: "chart title",
+	yAxisMaxValue: 100,
+	yAxisUnit: "hours",
+	barColor: "#38D430",
+	barBackgroundColor: "#ececec"
+}
 
-	data = [
-		{
-			x: "1st Bar",
-			y: 23,
-		},
-		{
-			x: "2nd Bar",
-			y: 65,
-		},
-		{
-			x: "3rd Bar",
-			y: 13,
-		},
-		{
-			x: "4th Bar",
-			y: 98,
-		},
-		{
-			x: "5th Bar",
-			y: 65,
-		},
-	]
+barChartData = [
+	{
+		x: "1st Bar",
+		y: 78,
+	},
+	{
+		x: "2nd Bar",
+		y: 67,
+	},
+	{
+		x: "3rd Bar",
+		y: 72,
+	},
+	{
+		x: "4th Bar",
+		y: 77,
+	},
+	{
+		x: "5th Bar",
+		y: 65,
+	},
+]
 
 ```
 

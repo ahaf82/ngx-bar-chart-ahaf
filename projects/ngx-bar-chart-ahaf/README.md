@@ -1,24 +1,72 @@
 # NgxBarChartAhaf
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
+A simple Bar-Chart Module for your angular project
 
-## Code scaffolding
+<br/>
+<kbd><img src="src/pics/hours.png"></kbd>
+<kbd><img src="src/pics/hours.png"></kbd>
+<br/><br/>
 
-Run `ng generate component component-name --project ngx-bar-chart-ahaf` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-bar-chart-ahaf`.
-> Note: Don't forget to add `--project ngx-bar-chart-ahaf` or else it will be added to the default project in your `angular.json` file. 
+## Getting Started
 
-## Build
+### Installation
 
-Run `ng build ngx-bar-chart-ahaf` to build the project. The build artifacts will be stored in the `dist/` directory.
+Install via [npm][npm] package manager 
 
-## Publishing
+```bash
+npm i ngx-bar-chart-ahaf
+```
 
-After building your library with `ng build ngx-bar-chart-ahaf`, go to the dist folder `cd dist/ngx-bar-chart-ahaf` and run `npm publish`.
+### Usage
 
-## Running unit tests
+Import `ngx-bar-chart-ahaf` module
 
-Run `ng test ngx-bar-chart-ahaf` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```js
+import { NgxBarChartAhafModule } from 'ngx-bar-chart-ahaf';
+@NgModule({
+  imports: [ NgxBarChartAhafModule ]
+})
+```
 
-## Further help
+Then in HTML
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```html
+<lib-ngx-bar-chart-ahaf data]="barChartData" [options]="barChartOptions"></lib-ngx-bar-chart-ahaf>
+```
+
+### Configuration
+
+```
+barChartOptions = {
+	chartTitle: "chart title",
+	yAxisMaxValue: 100,
+	yAxisUnit: "hours",
+	barColor: "#38D430",
+	barBackgroundColor: "#ececec"
+}
+
+barChartData = [
+	{
+		x: "1st Bar",
+		y: 78,
+	},
+	{
+		x: "2nd Bar",
+		y: 67,
+	},
+	{
+		x: "3rd Bar",
+		y: 72,
+	},
+	{
+		x: "4th Bar",
+		y: 77,
+	},
+	{
+		x: "5th Bar",
+		y: 65,
+	},
+]
+
+```
+

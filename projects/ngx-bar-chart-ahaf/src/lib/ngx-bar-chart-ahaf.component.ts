@@ -80,9 +80,13 @@ export class NgxBarChartAhafComponent implements OnInit {
 	setYAxisValuesToPercent() {
 		if (!!this.options.yAxisMaxValue) {
 			this.showInPercent = true;
-			this.yAxisValues = [`100`, `75`, `50`, `25`, `0%
-		`];
+			this.yAxisValues = [`100`, `75`, `50`, `25`, `0`];
 		}
+	}
+
+	getYValue(item: number): number {
+		if (!!this.options.yAxisMaxValue) return item / this.options.yAxisMaxValue * 100;
+		return item;
 	}
 
 }

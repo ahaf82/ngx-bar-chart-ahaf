@@ -42,7 +42,8 @@
 						</div>
 					</div>
 
-					<div class="stroke" style="--bar-color: {{barColor}}" [ngStyle]="{'height': item.y + '%'}">
+					<div class="stroke" style="--bar-color: {{barColor}}"
+						[ngStyle]="{'height': getYValue(item.y) + '%'}">
 					</div>
 				</div>
 

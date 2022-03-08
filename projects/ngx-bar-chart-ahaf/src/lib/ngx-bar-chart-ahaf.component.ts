@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
 	selector: 'lib-ngx-bar-chart-ahaf',
@@ -8,41 +8,54 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NgxBarChartAhafComponent implements OnInit {
 
+	@Input()
 	options = {
 		chartTitle: "Chart-Title",
-		xAxisTitle: "x-axis",
-		yAxisTitle: "y-axis",
-		displayedYAxisValues: [0, 25, 50, 75, 100],
+		yAxisMaxValue: 100,
+		yAxisUnit: "Cars",
+		barColor: "#38D430",
+		barBackgroundColor: "#ececec"
 	}
 
+	/* data input */
+	@Input()
 	data = [
 		{
 			x: "1st Bar",
-			y: 83,
+			y: 0,
 		},
 		{
 			x: "2nd Bar",
-			y: 22,
+			y: 0,
 		},
 		{
 			x: "3rd Bar",
-			y: 47,
+			y: 0,
 		},
 		{
 			x: "4th Bar",
-			y: 98,
+			y: 0,
 		},
 		{
 			x: "5th Bar",
-			y: 36,
+			y: 0,
 		},
 	]
 
 	showFeedback: boolean = true;
-	height: number = 300;
+	height: string = "20vw";
+	minHeight: string = "286px";
+	maxHeight: string = "300px";
 	hover: any = {}
+	barColor: string = "#38D430";
+	barBackgroundColor: string = "#ececec";
 	widthAxisPartition: number = 0;
+	yAxisUnit: string = "hours";
+	yAxisMaxValue: number = 100;
 	totalBadges: number = 0;
+	yAxisValues: string[] = ["100", "75", "50", "25", "0"];
+	yUnit: string = "";
+	showInPercent: boolean = false;
 
 	constructor() { }
 
@@ -50,5 +63,27 @@ export class NgxBarChartAhafComponent implements OnInit {
 		this.widthAxisPartition = 100 / this.data.length;
 	}
 
+	ngOnChanges() {
+		this.widthAxisPartition = 100 / this.data.length;
+		if (!!this.options.barColor) this.barColor = this.options.barColor;
+		if (!!this.options.barBackgroundColor) this.barBackgroundColor = this.options.barBackgroundColor;
+		this.setYAxisValues();
+	}
+
+	setYAxisValues() {
+		this.showInPercent = false;
+		!!this.options.yAxisUnit ? this.yUnit = this.options.yAxisUnit : "%";
+		this.yAxisMaxValue = !!this.options.yAxisMaxValue ? this.options.yAxisMaxValue : 100;
+		// this.yAxisValues = [`${this.yAxisMaxValue * 1} ${this.yUnit}`, `${this.yAxisMaxValue * 0.75} ${this.yUnit}`, `${this.yAxisMaxValue * 0.5} ${this.yUnit}`, `${this.yAxisMaxValue * 0.25} ${this.yUnit}`, `${this.yAxisMaxValue * 0} ${this.yUnit}`];
+		this.yAxisValues = [`${this.yAxisMaxValue * 1}`, `${this.yAxisMaxValue * 0.75}`, `${this.yAxisMaxValue * 0.5}`, `${this.yAxisMaxValue * 0.25}`, `${this.yAxisMaxValue * 0}`];
+	}
+
+	setYAxisValuesToPercent() {
+		if (!!this.options.yAxisMaxValue) {
+			this.showInPercent = true;
+			this.yAxisValues = [`100`, `75`, `50`, `25`, `0%
+		`];
+		}
+	}
 
 }

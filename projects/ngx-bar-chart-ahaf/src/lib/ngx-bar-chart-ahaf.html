@@ -1,13 +1,24 @@
-<div class="box" style="padding-bottom:70px">
+<div class="box" [ngStyle]="{'padding-bottom':'5vw', 'max-height': '456px', 'min-height': '286px'}">
 	<div class="row">
-		<div class="col-12">
+		<div class="col-9" style="margin-bottom:1em">
 			<span class="span normal-big">
 				{{options.chartTitle}}
 			</span>
 		</div>
 
+		<div class="col-3 span normal right center-v" style="margin-bottom:1em">
+			<span [ngClass]="{'bold': showInPercent != true, 'hand': showInPercent == true}" (click)="setYAxisValues()">
+				{{yUnit}}
+			</span>
+			<span> / </span>
+			<span (click)="setYAxisValuesToPercent()" *ngIf="yUnit!='%'"
+				[ngClass]="{'bold': showInPercent == true, 'hand': showInPercent != true}">
+				%
+			</span>
+		</div>
+
 		<div class="col-12" *ngIf="showFeedback==false">
-			<div [ngStyle]="{'height': height+ 'px'}">
+			<div [ngStyle]="{'height': height, 'max-height': maxHeight, 'min-height': 'minHeight'}">
 				<span class="normal">
 					nicht genügend Daten vorhanden
 				</span>
@@ -15,31 +26,24 @@
 		</div>
 
 		<div class="col-12" *ngIf="showFeedback==true">
-			<div class="left-box" [ngStyle]="{'height': height+ 'px'}">
-				<div>
-					<p class="tiny-small">100</p>
-				</div>
-				<div>
-					<p class="tiny-small">75</p>
-				</div>
-				<div>
-					<p class="tiny-small">50</p>
-				</div>
-				<div>
-					<p class="tiny-small">25</p>
-				</div>
-				<div>
-					<p class="tiny-small">0</p>
+			<div class="left-box" style="min-height: 200px;"
+				[ngStyle]="{'height': height, 'max-height': maxHeight, 'min-height': 'minHeight'}">
+				<div *ngFor="let item of yAxisValues">
+					<p class="tiny-small">{{item}}</p>
 				</div>
 			</div>
 
-			<div class="right-box relative center-h" [ngStyle]="{'height': height + 'px'}">
+			<div class="right-box relative center-h" style="min-height: 200px;"
+				[ngStyle]="{'height': height, 'max-height': maxHeight, 'min-height': 'minHeight'}">
 
 				<div class="x-box center-h" *ngFor="let item of data" [ngStyle]="{'width': widthAxisPartition+'%'}">
-					<div class="relative" style="height: 300px">
-						<div class="stroke-back"></div>
+					<div class="relative" [ngStyle]="{'height': height, 'max-height': maxHeight}">
+						<div class="stroke-back" style="--bar-background-color: {{barBackgroundColor}}">
+						</div>
 					</div>
-					<div class="stroke" [ngStyle]="{'height': item.y + '%'}"></div>
+
+					<div class="stroke" style="--bar-color: {{barColor}}" [ngStyle]="{'height': item.y + '%'}">
+					</div>
 				</div>
 
 
